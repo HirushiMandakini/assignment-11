@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --green:#168108;
+  --red:#E72929;
+  --skyblue:#008DDA;
+  --yellow:#FFC700;
+  --lightgreen:#4CCD99;
+  --white:#ffffff;
+  --gray:#e3e6e5;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
+}
+
+.container {
+  background-color: var(--gray);
+  height: 750px;
+  padding: 1cm;
+}
+
+.main-title-Order {
+  margin-top: 10px;
+  margin-left: 310px;
+}
+
+.invoiceDetails-container {
+  background-color: var(--white);
+  float: left;
+  width: 400px;
+  height: 350px;
+}
+
+.invoice-detail-title {
+  background-color: var(--green);
+  width: 400px;
+  height: 40px;
+  padding: 9px;
+  color: var(--white);
+}
+
+.col-md-4 {
+  width: 200px;
+}
+
+.col-md-44 {
+  width: 400px;
+
+}
+
+.invoicedetails-inputs {
+  padding: 10px;
+}
+
+.custom-textarea {
+  height: 25px;
+}
+
+
+/*item select*/
+
+.ItemSelect-container {
+  background-color: var(--white);
+  float: left;
+  width: 400px;
+  height: 350px;
+  margin-left: 45px;
+}
+
+.Item-Select-title {
+  background-color: var(--green);
+  width: 400px;
+  height: 40px;
+  padding: 9px;
+  color: var(--white);
+}
+
+.col-md-4 {
+  width: 200px;
+}
+
+.ItemSelect-inputs {
+  padding: 10px;
+}
+
+.custom-textarea {
+  height: 25px;
+}
+
+.col-md-444 {
+  width: 400px;
+  margin-top: 24px;
+
+}
+
+.additem {
+  margin-top: 1px;
+  float: right;
+}
+
+.oqfeild {
+  width:400px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+/*total container*/
+
+.Total-container {
+  background-color: var(--white);
+  float: left;
+  width: 350px;
+  height: 350px;
+  margin-left: 45px;
+  padding: 20px;
+  margin-bottom: 35px;
+}
+
+.total-lbl {
+  width: 110px;
+  color: var(--skyblue);
+}
+
+.total-cal {
+  width: auto;
+  color: var(--skyblue);
+}
+
+.total-row {
+  margin-top: 15px;
+}
+
+.subtotal-lbl {
+  width: 150px;
+  color: var(--red);
+}
+
+.subtotal-cal {
+  width: auto;
+  color: var(--red);
+}
+
+.Cashfeild {
+  width: 165px;
+}
+
+.Discountfeild {
+  width: 165px;
+  margin-left: 4px;
+}
+
+.Balance {
+  width: 400px;
+}
+
+.center-col {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.btn-perch {
+  background-color: var(--green);
+}
+
+/*table*/
+
+.table {
+  border: 1px solid #dee2e6; /* Border for the table */
+}
+
+.table th,
+.table td {
+  border: 1px solid #cfcfcf; /* Border for table header and table data cells */
+  padding: 8px; /* Add padding for better spacing */
+}
+
+.clear-green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.table-green th {
+  background-color: var(--green);
+  color: white;
+}

@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Pos System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/storemanage.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Nilu Pos System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="nav-order" aria-current="page" href="#order-mannage-section">Order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="nav-item" aria-current="page" href="#item-section">Items</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="nav-customer" aria-current="page" href="#Customer-section">Customer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Other</a>
+            </li>
+          </ul>
+          <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-user"></i> Sign up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"> </i>Logout</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- customer section -->
+<section id="Customer-section" class="page-section hidden" >
+      <h1 class="main-title-customer"><i class="fas fa-users"></i>Customer</h1>
+
+      <div class="container">
+        <div class="buttions-add-view">
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addCustomerModal">Add Customers</button>
+          <button type="button" class="btn btn-info">View All Customers</button>
+        </div>
+        <div class="customer-search-container">
+
+        <div class="customer-search-title">
+          <h5>Customer search</h5>
+        </div>
+
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary-search" type="submit">Search</button>
+          </form>
+
+          <div class="dropdown">
+            <button class="btn btn-type dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Type
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><button class="dropdown-item" type="button">Name</button></li>
+              <li><button class="dropdown-item" type="button">Age</button></li>
+              <li><button class="dropdown-item" type="button">Address</button></li>
+              <li><button class="dropdown-item" type="button">Salary</button></li>
+            </ul>
+          </div>
+      </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-info">Update</button>
+        <button type="button" class="btn clear-green">Clear</button>
+      </div>
+      <div class="table-cus">
+        <table class="table">
+          <thead class="green-header">
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Address</th>
+              <th>Salary</th>
+            </tr>
+          </thead>
+          <tbody id="table-Customer">
+           
+          </tbody>
+        </table>
+        
+      </div>
+      </div>
+
+<!-- Modal -->
+<div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addCustomerModalLabel">Add Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form for adding customers can go here -->
+        <form>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="CustomerName" placeholder="Enter Customer Name">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Customer Age</label>
+            <input type="text" class="form-control" id="CustomerAge" placeholder="Enter Customer Age">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Customer Address</label>
+            <input type="text" class="form-control" id="CustomerAddress" placeholder="Enter Customer Address">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Customer Salary</label>
+            <input type="text" class="form-control" id="CustomerSalary" placeholder="Enter Customer Salary">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="customer-save" >Save</button>
+        <button type="button" class="btn btn-warning"  id="customer-update" >Update</button>
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal" id="customer-delete" >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- item section-->
+<section id="item-section" class="page-section hidden" >
+    <h1 class="main-title-customer"><i class="fas fa-sitemap"></i>
+      Items</h1>
+
+    <div class="container">
+      <div class="buttions-add-view">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addCustomerModal">Add Items</button>
+        <button type="button" class="btn btn-info">View All Items</button>
+      </div>
+      <div class="customer-search-container">
+
+      <div class="customer-search-title">
+        <h5>Item search</h5>
+      </div>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary-search" type="submit">Search</button>
+        </form>
+
+        <div class="dropdown">
+          <button class="btn btn-type dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Type
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">Item Code</button></li>
+            <li><button class="dropdown-item" type="button">Name</button></li>
+            <li><button class="dropdown-item" type="button">Quntity</button></li>
+            <li><button class="dropdown-item" type="button">Price</button></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" class="btn btn-danger">Delete</button>
+      <button type="button" class="btn btn-info">Update</button>
+      <button type="button" class="btn clear-green">Clear</button>
+    </div>
+    <div class="table-cus">
+      <table class="table">
+        <thead class="green-header">
+          <tr>
+            <th>Item Code</th>
+            <th>Name</th>
+            <th>Quntity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>123 Main St</td>
+            <td>$50,000</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+      
+    </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addCustomerModalLabel">Add Item</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <!-- Form for adding customers can go here -->
+      <form>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Item Code</label>
+          <input type="text" class="form-control" id="ItemCodeInput" placeholder="Enter Item Code">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Item Name</label>
+          <input type="text" class="form-control" id="ItemNameInput" placeholder="Enter Item Name">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Item Quntitiy</label>
+          <input type="text" class="form-control" id="ItemQuntitiyInput" placeholder="Enter Item Quntitiy">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Item Price</label>
+          <input type="text" class="form-control" id="ItemPriceInput" placeholder="Enter Item Price">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger">Save</button>
+      <button type="button" class="btn btn-warning">Review</button>
+      <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</section>
+<!-- store mannage-->
+<section id="order-mannage-section" class="page-section hidden">
+
+    <h1 class="main-title-customer"><i class="fas fa-check"></i>
+      Order Management</h1>
+
+    <div class="container">
+
+
+      <div class="invoiceDetails-container">
+
+        <div class="invoice-detail-title">
+          <h5>Invoice Details</h5>
+        </div>
+
+        <div class="invoicedetails-inputs">
+
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="orderID" class="fw-bold">Order ID:</label>
+                <input type="text" class="form-control" id="orderID" placeholder="Enter Order ID">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="date" class="fw-bold">Date:</label>
+                <input type="date" class="form-control" id="date">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="customer" class="fw-bold">Customer:</label>
+                <select class="form-control" id="customer">
+                  <option value="">select <i class="fas fa-caret-down"></i>
+                  </option>
+                  <option value="customer1">Customer 1</option>
+                  <option value="customer2">Customer 2</option>
+                  <option value="customer3">Customer 3</option>
+              </select>
+              </div>
+
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="customerID" class="fw-bold">Customer ID:</label>
+                <input type="text" class="form-control" id="customerID" placeholder="Enter Customer ID">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="name" class="fw-bold">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="salary" class="fw-bold">Salary:</label>
+                <input type="text" class="form-control" id="Salary" placeholder="Enter Salary">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-44">
+              <div class="form-group">
+                <label for="address" class="fw-bold">Address:</label>
+                <textarea class="form-control custom-textarea" id="address" rows="3" placeholder="Enter Customer Address"></textarea>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="ItemSelect-container">
+
+        <div class="Item-Select-title">
+          <h5>Item Select</h5>
+        </div>
+
+        <div class="ItemSelect-inputs">
+
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="Item" class="fw-bold">Item:</label>
+                <select class="form-control" id="Item">
+                  <option value="">select <i class="fas fa-caret-down"></i>
+                  </option>
+                  <option value="Item">Item 1</option>
+                  <option value="Item">Item 2</option>
+                  <option value="Item">Item 3</option>
+              </select>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="Price" class="fw-bold">Price:</label>
+                <input type="text" class="form-control" id="Price" placeholder="Enter Price">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="ItemName" class="fw-bold">ItemName:</label>
+                <input type="text" class="form-control" id="ItemName" placeholder="Enter Item Name">
+              </div>
+
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="QtyOnHand" class="fw-bold">QtyOnHand:</label>
+                <input type="text" class="form-control" id="QtyOnHand" placeholder="Enter QtyOnHand">
+              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-4 oqfeild">
+              <div class="form-group">
+                <label for="OrderQuantity" class="fw-bold">Order Quantity:</label>
+                <input type="text" class="form-control" id="OrderQuantity" placeholder="Enter Order Qty">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-444">
+              <button type="button" class="btn btn-danger additem">Add Item</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div> 
+
+      <div class="Total-container">
+
+        <div class="row total-row">
+              <h3 class="total-lbl">Total :</h3>
+              <h3 class="total-cal" id="total" >10500.00/=</h3>
+        </div>
+
+        <div class="row total-row">
+          <h4 class="subtotal-lbl">SubTotal :</h4>
+          <h4 class="subtotal-cal" id="total" >10500.00/=</h4>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4 Cashfeild">
+            <div class="form-group">
+              <label for="Cash" class="fw-bold">Cash:</label>
+              <input type="number" class="form-control" id="Cash" placeholder="Enter Cash">
+            </div>
+
+          </div>
+
+          <div class="col-md-4 Discountfeild">
+            <div class="form-group">
+              <label for="Discount" class="fw-bold">Discount:</label>
+              <input type="number" class="form-control" id="Discount" placeholder="Enter Discount" min="0" step="1">
+
+            </div>
+          </div>
+
+
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-4 Balance">
+            <div class="form-group">
+              <label for="Balance" class="fw-bold">Balance:</label>
+              <input type="number" class="form-control" id="Balance" placeholder="Balance" min="0" step="1">
+            </div>
+          </div>
+        </div>
+        <div class="row purchesed">
+          <div class="col-md-4 center-col ">
+          <button type="button" class="btn btn-success btn-perch">Purchsed</button>
+        </div>
+        </div>
+      </div>
+      
+      <table class="table">
+        <thead class="table-green">
+          <tr>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Product A</td>
+            <td>$10.00</td>
+            <td>2</td>
+            <td>$20.00</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Product B</td>
+            <td>$15.00</td>
+            <td>1</td>
+            <td>$15.00</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Product C</td>
+            <td>$20.00</td>
+            <td>3</td>
+            <td>$60.00</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Product C</td>
+            <td>$20.00</td>
+            <td>3</td>
+            <td>$60.00</td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Product C</td>
+            <td>$20.00</td>
+            <td>3</td>
+            <td>$60.00</td>
+          </tr>
+          <tr>
+            <td>006</td>
+            <td>Product C</td>
+            <td>$90.00</td>
+            <td>3</td>
+            <td>$60.00</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      </div>
+
+</section>
+
+      
+     
+<script>
+    // Event handlers for navigation links
+    $('#nav-customer').on('click', () => {
+      $('#Customer-section').css('display', 'block');
+      $('#item-section').css('display', 'none');
+      $('#order-mannage-section').css('display', 'none');
+    });
+  
+    $('#nav-item').on('click', () => {
+      $('#item-section').css('display', 'block');
+      $('#Customer-section').css('display', 'none');
+      $('#order-mannage-section').css('display', 'none');
+    });
+  
+    $('#nav-order').on('click', () => {
+      $('#order-mannage-section').css('display', 'block');
+      $('#Customer-section').css('display', 'none');
+      $('#item-section').css('display', 'none');
+    });
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="module" src="../controller/Customer.js"></script>
+  
+
+  </body>
+</html>
