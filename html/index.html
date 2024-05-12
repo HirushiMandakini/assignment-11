@@ -11,6 +11,7 @@
     <title>Pos System</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/storemanage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,6 +52,7 @@
 
     <!-- customer section -->
 <section id="Customer-section" class="page-section hidden" >
+  <div class="customer">
       <h1 class="main-title-customer"><i class="fas fa-users"></i>Customer</h1>
 
       <div class="container">
@@ -65,8 +67,8 @@
         </div>
 
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary-search" type="submit">Search</button>
+            <input class="form-control me-2" type="search" id="searchField" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary-search" id="search" type="submit">Search</button>
           </form>
 
           <div class="dropdown">
@@ -74,10 +76,10 @@
               Type
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><button class="dropdown-item" type="button">Id</button></li>
               <li><button class="dropdown-item" type="button">Name</button></li>
-              <li><button class="dropdown-item" type="button">Age</button></li>
               <li><button class="dropdown-item" type="button">Address</button></li>
-              <li><button class="dropdown-item" type="button">Salary</button></li>
+              <li><button class="dropdown-item" type="button">Mobile</button></li>
             </ul>
           </div>
       </div>
@@ -88,13 +90,13 @@
         <button type="button" class="btn clear-green">Clear</button>
       </div>
       <div class="table-cus">
-        <table class="table">
+        <table class="table" id="customerTable">
           <thead class="green-header">
             <tr>
+              <th>Id</th>
               <th>Name</th>
-              <th>Age</th>
               <th>Address</th>
-              <th>Salary</th>
+              <th>Mobile</th>
             </tr>
           </thead>
           <tbody id="table-Customer">
@@ -117,31 +119,40 @@
         <!-- Form for adding customers can go here -->
         <form>
           <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Customer Name</label>
-            <input type="text" class="form-control" id="CustomerName" placeholder="Enter Customer Name">
+            <label for="formGroupExampleInput" class="form-label">Customer Id</label>
+            <input type="text" class="form-control" id="CustomerId" placeholder="Customer Id">
           </div>
           <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Customer Age</label>
-            <input type="text" class="form-control" id="CustomerAge" placeholder="Enter Customer Age">
+            <label for="formGroupExampleInput2" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="CustomerName" placeholder="Enter Customer Name">
           </div>
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Customer Address</label>
             <input type="text" class="form-control" id="CustomerAddress" placeholder="Enter Customer Address">
           </div>
           <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Customer Salary</label>
-            <input type="text" class="form-control" id="CustomerSalary" placeholder="Enter Customer Salary">
+            <label for="formGroupExampleInput2" class="form-label">Customer Mobile</label>
+            <input type="text" class="form-control" id="CustomerMobile" placeholder="Enter Customer Mobile">
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" id="customer-save" >Save</button>
+      <!-- customer adding form button -->
+      <div class="modal-footer" id="customer_btn" >
+        <button type="button" class="btn btn-danger" id="customer-save" >Submit</button>
         <button type="button" class="btn btn-warning"  id="customer-update" >Update</button>
         <button type="button" class="btn btn-info" data-bs-dismiss="modal" id="customer-delete" >Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="customer-reset" >Reset</button>
       </div>
     </div>
   </div>
 </div>
+
+</div>
+</section>
+
+
+
+
 </section>
 
 <!-- item section-->
@@ -544,7 +555,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script type="module" src="../controller/Customer.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
   </body>
 </html>

@@ -1,40 +1,20 @@
 export default class CustomerModel {
-    constructor(name, age, address, salary) {
-        this._name = name;
-        this._age = age;
-        this._address = address;
-        this._salary = salary;
+    constructor(customer_id, customer_name, customer_address, mobile) {
+        this._customer_id = customer_id;
+        this._customer_name = customer_name;
+        this._customer_address = customer_address;
+        this._mobile = mobile;
     }
 
-    get name() {
-        return this._name;
-    }
+    get customer_id() { return this._customer_id; }
+    set customer_id(customer_id) { this._customer_id = customer_id; }
 
-    set name(name) {
-        this._name = name;
-    }
+    get customer_name() { return this._customer_name; }
+    set customer_name(customer_name) { this._customer_name = customer_name; }
 
-        get age() {
-        return this._age;
-    }
+    get customer_address() { return this._customer_address; }
+    set customer_address(customer_address) { this._customer_address = customer_address; }
 
-    set age(age) {
-        this._age = age;
-    }
-
-    get address() {
-        return this._address;
-    }
-
-    set address(address) {
-        this._address = address;
-    }
-
-    get salary() {
-        return this._salary;
-    }
-
-    set salary(salary) {
-        this._salary = salary;
-    }
+    get mobile() { return this._mobile; }
+    set mobile(mobile) { this._mobile = mobile; }
 }
