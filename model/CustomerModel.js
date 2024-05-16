@@ -3,7 +3,7 @@ export default class CustomerModel {
         this._id = id;
         this._name = name;
         this._address=address;
-        this._contact;
+        this._contact=contact;
     }
 
     get id() { return this._id; }

@@ -232,7 +232,7 @@ function loadTable(){
     });
 }
 function inputClear(){
-    $("#CustomerId").val('');
+    $("#CustomerId").val(generateNextCustomerId()); // //
     $("#CustomerName").val('');
     $("#CustomerAddress").val('');
     $("#CustomerMobile").val('');
@@ -346,7 +346,7 @@ function inputClear(){
     $("#CustomerId").val(id);
     $("#CustomerName").val(name);
     $("#CustomerAddress").val(address);
-    $("#CustomerPhone").val(contact);
+    $("#CustomerMobile").val(contact);
  
     $("#addCustomerModal").modal("show");
  });
@@ -373,4 +373,35 @@ function inputClear(){
     }
  });
  
- 
+ let search = $("#search");
+let searchField = $("#searchField");
+
+searchField.on('input', function () {
+    let search_term = searchField.val();
+
+    let results = customers.filter((item) =>
+
+        item.id.toLowerCase().startsWith(search_term.toLowerCase()) || item.name.toLowerCase().startsWith(search_term.toLowerCase()) || item.address.toLowerCase().startsWith(search_term.toLowerCase()) ||
+        item.contact.toLowerCase().startsWith(search_term.toLowerCase())
+
+    );
+
+    $('#table-Customer').eq(0).empty();
+    results.map((item, index) => {
+        let tbl_row = `<tr>
+            <th scope="row">${item.id}</th>
+            <td>${item.name}</td>
+            <td>${item.address}</td>
+            <td>${item.mobile}</td>
+        </tr>`;
+        $('#table-Customer').eq(0).append(tbl_row);
+    });
+
+});
+// --------------- clear inputs
+const cleanInputs = () => {
+    $('#CustomerId').val('');
+    $('#CustomerName').val('');
+    $('#CustomerAddress').val('');
+    $('#CustomerMobile').val('');
+};
