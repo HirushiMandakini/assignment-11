@@ -1,3 +1,3 @@
-export var customer_db = [];
+export var customers = [];
 export var items = [];
 var orders = [];
