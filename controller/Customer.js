@@ -232,12 +232,11 @@ function loadTable(){
     });
 }
 function inputClear(){
-    $("#CustomerId").val(generateNextCustomerId()); // //
+    $("#CustomerId").val(generateNextCustomerId); // //
     $("#CustomerName").val('');
     $("#CustomerAddress").val('');
     $("#CustomerMobile").val('');
  }
-
 
  function validateField(value, pattern, errorMessage) {
     if (!pattern.test(value)){
@@ -259,7 +258,7 @@ function inputClear(){
  
     return newId;
  }
- 
+
  $('#customer-save').on('click',() =>{
     var customerId = generateNextCustomerId();
     var customerName = $('#CustomerName').val().trim();
@@ -293,8 +292,19 @@ function inputClear(){
     inputClear();
     $("#addCustomerModal").modal("hide");
     $("#customer-reset").click();
+
+
+     // Show success alert
+     Swal.fire({
+        icon: 'success',
+        title: 'Customer Saved!',
+        text: 'The customer details have been successfully saved.',
+        showConfirmButton: false,
+        timer: 1500 // Close alert after 1.5 seconds
+    });
  });
- 
+
+
  $("#customer-update").on("click", function() {
     var customerId = $('#CustomerId').val().trim();
     var customerName = $('#CustomerName').val().trim();
@@ -330,6 +340,7 @@ function inputClear(){
  
     loadTable();
     inputClear();
+    $("#customer-reset").click();
  
     $("#addCustomerModal").modal("hide");
  });
@@ -348,13 +359,16 @@ function inputClear(){
     $("#CustomerAddress").val(address);
     $("#CustomerMobile").val(contact);
  
+   
     $("#addCustomerModal").modal("show");
+    
  });
  
  $("#customer-delete").on('click',() =>{
     customers.splice(recordIndex,1);
     inputClear();
     loadTable();
+    $("#customer-reset").click();
  });
  
  $("#customer-search").on("click", function() {
@@ -392,16 +406,9 @@ searchField.on('input', function () {
             <th scope="row">${item.id}</th>
             <td>${item.name}</td>
             <td>${item.address}</td>
-            <td>${item.mobile}</td>
+            <td>${item.contact}</td>
         </tr>`;
         $('#table-Customer').eq(0).append(tbl_row);
     });
 
 });
-// --------------- clear inputs
-const cleanInputs = () => {
-    $('#CustomerId').val('');
-    $('#CustomerName').val('');
-    $('#CustomerAddress').val('');
-    $('#CustomerMobile').val('');
-};
